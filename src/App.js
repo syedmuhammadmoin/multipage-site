@@ -1,10 +1,11 @@
 import './App.css';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Switch, Link, NavLink } from 'react-router-dom';
 
 // page components
 import Home from './pages/Home';
 import Contact from './pages/Contact';
 import About from './pages/About';
+import Article from './pages/Article';
 
 function App() {
   return (
@@ -12,9 +13,11 @@ function App() {
       <BrowserRouter>
         <nav>
           <h1>My Articles</h1>
-          <a href='/'>Home</a>
-          <a href='/about'>About</a>
-          <a href='/contact'>Contact</a>
+          <NavLink exact to='/'>
+            Home
+          </NavLink>
+          <NavLink to='/about'>About</NavLink>
+          <NavLink to='/contact'>Contact</NavLink>
         </nav>
 
         <Switch>
@@ -26,6 +29,9 @@ function App() {
           </Route>
           <Route path='/contact'>
             <Contact />
+          </Route>
+          <Route path='/articles/:id'>
+            <Article />
           </Route>
         </Switch>
       </BrowserRouter>
