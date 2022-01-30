@@ -1,5 +1,5 @@
 import './App.css';
-import { BrowserRouter, Route, Switch, Link, NavLink } from 'react-router-dom';
+import { BrowserRouter, Route, Switch, NavLink } from 'react-router-dom';
 
 // page components
 import Home from './pages/Home';
